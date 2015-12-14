@@ -4,8 +4,9 @@ function [ x, e ] = PALM( A, b, varargin)
 % Reference:
 % 'Fast l1-Minimization AlgorithmsFor Robust Face Recognition',
 % 
-% This code is used for the optimazation in SOC, 
-% referred to the paper "structured occlusion coding for robust face recognition".
+% This code is the extension version of PALM (add L2 regularation, weights for residual and sparse coefficients)
+% and used for solving the convex optimazation problem in SOC, achieving excellent speed and performance.
+% Please refer to the paper "Structured Occlusion Coding for Robust Face Recognition".
 % Yandong Wen, Weiyang Liu, Meng Yang, Yuli Fu, Youjun Xiang, Rui Hu.
 % =========================================================================
 
@@ -134,4 +135,3 @@ end
 function Y = shrink(X, alpha)
     Y = sign(X).*max(abs(X)-alpha,0);   
 end
-
